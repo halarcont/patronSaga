@@ -1,0 +1,2896 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.1.74"
+        }
+      },
+      "CdkServerlessSagaStack": {
+        "id": "CdkServerlessSagaStack",
+        "path": "CdkServerlessSagaStack",
+        "children": {
+          "StateMachine": {
+            "id": "StateMachine",
+            "path": "CdkServerlessSagaStack/StateMachine",
+            "children": {
+              "Flights": {
+                "id": "Flights",
+                "path": "CdkServerlessSagaStack/StateMachine/Flights",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/Flights/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                      "aws:cdk:cloudformation:props": {
+                        "keySchema": [
+                          {
+                            "attributeName": "pk",
+                            "keyType": "HASH"
+                          },
+                          {
+                            "attributeName": "sk",
+                            "keyType": "RANGE"
+                          }
+                        ],
+                        "attributeDefinitions": [
+                          {
+                            "attributeName": "pk",
+                            "attributeType": "S"
+                          },
+                          {
+                            "attributeName": "sk",
+                            "attributeType": "S"
+                          }
+                        ],
+                        "provisionedThroughput": {
+                          "readCapacityUnits": 5,
+                          "writeCapacityUnits": 5
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_dynamodb.CfnTable",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "ScalingRole": {
+                    "id": "ScalingRole",
+                    "path": "CdkServerlessSagaStack/StateMachine/Flights/ScalingRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_dynamodb.Table",
+                  "version": "2.37.1"
+                }
+              },
+              "Rentals": {
+                "id": "Rentals",
+                "path": "CdkServerlessSagaStack/StateMachine/Rentals",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/Rentals/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                      "aws:cdk:cloudformation:props": {
+                        "keySchema": [
+                          {
+                            "attributeName": "pk",
+                            "keyType": "HASH"
+                          },
+                          {
+                            "attributeName": "sk",
+                            "keyType": "RANGE"
+                          }
+                        ],
+                        "attributeDefinitions": [
+                          {
+                            "attributeName": "pk",
+                            "attributeType": "S"
+                          },
+                          {
+                            "attributeName": "sk",
+                            "attributeType": "S"
+                          }
+                        ],
+                        "provisionedThroughput": {
+                          "readCapacityUnits": 5,
+                          "writeCapacityUnits": 5
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_dynamodb.CfnTable",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "ScalingRole": {
+                    "id": "ScalingRole",
+                    "path": "CdkServerlessSagaStack/StateMachine/Rentals/ScalingRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_dynamodb.Table",
+                  "version": "2.37.1"
+                }
+              },
+              "Payments": {
+                "id": "Payments",
+                "path": "CdkServerlessSagaStack/StateMachine/Payments",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/Payments/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                      "aws:cdk:cloudformation:props": {
+                        "keySchema": [
+                          {
+                            "attributeName": "pk",
+                            "keyType": "HASH"
+                          },
+                          {
+                            "attributeName": "sk",
+                            "keyType": "RANGE"
+                          }
+                        ],
+                        "attributeDefinitions": [
+                          {
+                            "attributeName": "pk",
+                            "attributeType": "S"
+                          },
+                          {
+                            "attributeName": "sk",
+                            "attributeType": "S"
+                          }
+                        ],
+                        "provisionedThroughput": {
+                          "readCapacityUnits": 5,
+                          "writeCapacityUnits": 5
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_dynamodb.CfnTable",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "ScalingRole": {
+                    "id": "ScalingRole",
+                    "path": "CdkServerlessSagaStack/StateMachine/Payments/ScalingRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_dynamodb.Table",
+                  "version": "2.37.1"
+                }
+              },
+              "reserveFlightLambdaHandler": {
+                "id": "reserveFlightLambdaHandler",
+                "path": "CdkServerlessSagaStack/StateMachine/reserveFlightLambdaHandler",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "CdkServerlessSagaStack/StateMachine/reserveFlightLambdaHandler/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkServerlessSagaStack/StateMachine/reserveFlightLambdaHandler/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "CdkServerlessSagaStack/StateMachine/reserveFlightLambdaHandler/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "CdkServerlessSagaStack/StateMachine/reserveFlightLambdaHandler/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "dynamodb:BatchGetItem",
+                                        "dynamodb:BatchWriteItem",
+                                        "dynamodb:ConditionCheckItem",
+                                        "dynamodb:DeleteItem",
+                                        "dynamodb:DescribeTable",
+                                        "dynamodb:GetItem",
+                                        "dynamodb:GetRecords",
+                                        "dynamodb:GetShardIterator",
+                                        "dynamodb:PutItem",
+                                        "dynamodb:Query",
+                                        "dynamodb:Scan",
+                                        "dynamodb:UpdateItem"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachineFlights3C492D1B",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Ref": "AWS::NoValue"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "StateMachinereserveFlightLambdaHandlerServiceRoleDefaultPolicy89EFFCA0",
+                                "roles": [
+                                  {
+                                    "Ref": "StateMachinereserveFlightLambdaHandlerServiceRole2690F28A"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.37.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "CdkServerlessSagaStack/StateMachine/reserveFlightLambdaHandler/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "CdkServerlessSagaStack/StateMachine/reserveFlightLambdaHandler/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "CdkServerlessSagaStack/StateMachine/reserveFlightLambdaHandler/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/reserveFlightLambdaHandler/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "s3Key": "241413fa5aba7f27c52f9724bcd348c2cf28cf21d7abade2a28f9da5bc1ebc6a.zip"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "StateMachinereserveFlightLambdaHandlerServiceRole2690F28A",
+                            "Arn"
+                          ]
+                        },
+                        "environment": {
+                          "variables": {
+                            "TABLE_NAME": {
+                              "Ref": "StateMachineFlights3C492D1B"
+                            },
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                          }
+                        },
+                        "handler": "index.handler",
+                        "runtime": "nodejs16.x"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.37.1"
+                }
+              },
+              "confirmFlightLambdaHandler": {
+                "id": "confirmFlightLambdaHandler",
+                "path": "CdkServerlessSagaStack/StateMachine/confirmFlightLambdaHandler",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "CdkServerlessSagaStack/StateMachine/confirmFlightLambdaHandler/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkServerlessSagaStack/StateMachine/confirmFlightLambdaHandler/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "CdkServerlessSagaStack/StateMachine/confirmFlightLambdaHandler/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "CdkServerlessSagaStack/StateMachine/confirmFlightLambdaHandler/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "dynamodb:BatchGetItem",
+                                        "dynamodb:BatchWriteItem",
+                                        "dynamodb:ConditionCheckItem",
+                                        "dynamodb:DeleteItem",
+                                        "dynamodb:DescribeTable",
+                                        "dynamodb:GetItem",
+                                        "dynamodb:GetRecords",
+                                        "dynamodb:GetShardIterator",
+                                        "dynamodb:PutItem",
+                                        "dynamodb:Query",
+                                        "dynamodb:Scan",
+                                        "dynamodb:UpdateItem"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachineFlights3C492D1B",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Ref": "AWS::NoValue"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "StateMachineconfirmFlightLambdaHandlerServiceRoleDefaultPolicy5FFA13F3",
+                                "roles": [
+                                  {
+                                    "Ref": "StateMachineconfirmFlightLambdaHandlerServiceRoleB208790D"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.37.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "CdkServerlessSagaStack/StateMachine/confirmFlightLambdaHandler/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "CdkServerlessSagaStack/StateMachine/confirmFlightLambdaHandler/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "CdkServerlessSagaStack/StateMachine/confirmFlightLambdaHandler/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/confirmFlightLambdaHandler/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "s3Key": "002cab4c53e10918df5b72f2cef6504426889ea97cff80b327d2805f9cda336c.zip"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "StateMachineconfirmFlightLambdaHandlerServiceRoleB208790D",
+                            "Arn"
+                          ]
+                        },
+                        "environment": {
+                          "variables": {
+                            "TABLE_NAME": {
+                              "Ref": "StateMachineFlights3C492D1B"
+                            },
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                          }
+                        },
+                        "handler": "index.handler",
+                        "runtime": "nodejs16.x"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.37.1"
+                }
+              },
+              "cancelFlightLambdaHandler": {
+                "id": "cancelFlightLambdaHandler",
+                "path": "CdkServerlessSagaStack/StateMachine/cancelFlightLambdaHandler",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "CdkServerlessSagaStack/StateMachine/cancelFlightLambdaHandler/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkServerlessSagaStack/StateMachine/cancelFlightLambdaHandler/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "CdkServerlessSagaStack/StateMachine/cancelFlightLambdaHandler/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "CdkServerlessSagaStack/StateMachine/cancelFlightLambdaHandler/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "dynamodb:BatchGetItem",
+                                        "dynamodb:BatchWriteItem",
+                                        "dynamodb:ConditionCheckItem",
+                                        "dynamodb:DeleteItem",
+                                        "dynamodb:DescribeTable",
+                                        "dynamodb:GetItem",
+                                        "dynamodb:GetRecords",
+                                        "dynamodb:GetShardIterator",
+                                        "dynamodb:PutItem",
+                                        "dynamodb:Query",
+                                        "dynamodb:Scan",
+                                        "dynamodb:UpdateItem"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachineFlights3C492D1B",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Ref": "AWS::NoValue"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "StateMachinecancelFlightLambdaHandlerServiceRoleDefaultPolicyF8BBA7E8",
+                                "roles": [
+                                  {
+                                    "Ref": "StateMachinecancelFlightLambdaHandlerServiceRoleF9A4FEBF"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.37.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "CdkServerlessSagaStack/StateMachine/cancelFlightLambdaHandler/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "CdkServerlessSagaStack/StateMachine/cancelFlightLambdaHandler/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "CdkServerlessSagaStack/StateMachine/cancelFlightLambdaHandler/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/cancelFlightLambdaHandler/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "s3Key": "46fdc34967ec3382507d3d8af0bc3b429860e9965153c999bfb397a8e2a4f467.zip"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "StateMachinecancelFlightLambdaHandlerServiceRoleF9A4FEBF",
+                            "Arn"
+                          ]
+                        },
+                        "environment": {
+                          "variables": {
+                            "TABLE_NAME": {
+                              "Ref": "StateMachineFlights3C492D1B"
+                            },
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                          }
+                        },
+                        "handler": "index.handler",
+                        "runtime": "nodejs16.x"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.37.1"
+                }
+              },
+              "reserveRentalLambdaHandler": {
+                "id": "reserveRentalLambdaHandler",
+                "path": "CdkServerlessSagaStack/StateMachine/reserveRentalLambdaHandler",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "CdkServerlessSagaStack/StateMachine/reserveRentalLambdaHandler/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkServerlessSagaStack/StateMachine/reserveRentalLambdaHandler/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "CdkServerlessSagaStack/StateMachine/reserveRentalLambdaHandler/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "CdkServerlessSagaStack/StateMachine/reserveRentalLambdaHandler/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "dynamodb:BatchGetItem",
+                                        "dynamodb:BatchWriteItem",
+                                        "dynamodb:ConditionCheckItem",
+                                        "dynamodb:DeleteItem",
+                                        "dynamodb:DescribeTable",
+                                        "dynamodb:GetItem",
+                                        "dynamodb:GetRecords",
+                                        "dynamodb:GetShardIterator",
+                                        "dynamodb:PutItem",
+                                        "dynamodb:Query",
+                                        "dynamodb:Scan",
+                                        "dynamodb:UpdateItem"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachineRentals390CA5B9",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Ref": "AWS::NoValue"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "StateMachinereserveRentalLambdaHandlerServiceRoleDefaultPolicyCC05D643",
+                                "roles": [
+                                  {
+                                    "Ref": "StateMachinereserveRentalLambdaHandlerServiceRole7BF152F7"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.37.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "CdkServerlessSagaStack/StateMachine/reserveRentalLambdaHandler/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "CdkServerlessSagaStack/StateMachine/reserveRentalLambdaHandler/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "CdkServerlessSagaStack/StateMachine/reserveRentalLambdaHandler/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/reserveRentalLambdaHandler/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "s3Key": "21a57824ffefe03ae55de6c680a008c93cc235094ce52120c37d85b7222af6e9.zip"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "StateMachinereserveRentalLambdaHandlerServiceRole7BF152F7",
+                            "Arn"
+                          ]
+                        },
+                        "environment": {
+                          "variables": {
+                            "TABLE_NAME": {
+                              "Ref": "StateMachineRentals390CA5B9"
+                            },
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                          }
+                        },
+                        "handler": "index.handler",
+                        "runtime": "nodejs16.x"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.37.1"
+                }
+              },
+              "confirmRentalLambdaHandler": {
+                "id": "confirmRentalLambdaHandler",
+                "path": "CdkServerlessSagaStack/StateMachine/confirmRentalLambdaHandler",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "CdkServerlessSagaStack/StateMachine/confirmRentalLambdaHandler/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkServerlessSagaStack/StateMachine/confirmRentalLambdaHandler/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "CdkServerlessSagaStack/StateMachine/confirmRentalLambdaHandler/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "CdkServerlessSagaStack/StateMachine/confirmRentalLambdaHandler/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "dynamodb:BatchGetItem",
+                                        "dynamodb:BatchWriteItem",
+                                        "dynamodb:ConditionCheckItem",
+                                        "dynamodb:DeleteItem",
+                                        "dynamodb:DescribeTable",
+                                        "dynamodb:GetItem",
+                                        "dynamodb:GetRecords",
+                                        "dynamodb:GetShardIterator",
+                                        "dynamodb:PutItem",
+                                        "dynamodb:Query",
+                                        "dynamodb:Scan",
+                                        "dynamodb:UpdateItem"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachineRentals390CA5B9",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Ref": "AWS::NoValue"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "StateMachineconfirmRentalLambdaHandlerServiceRoleDefaultPolicyB855A1A9",
+                                "roles": [
+                                  {
+                                    "Ref": "StateMachineconfirmRentalLambdaHandlerServiceRole0C0877C4"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.37.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "CdkServerlessSagaStack/StateMachine/confirmRentalLambdaHandler/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "CdkServerlessSagaStack/StateMachine/confirmRentalLambdaHandler/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "CdkServerlessSagaStack/StateMachine/confirmRentalLambdaHandler/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/confirmRentalLambdaHandler/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "s3Key": "56111a816fd9ea5eb4402a2c4db1d6457418bbf240109e550b2cac324c83bca1.zip"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "StateMachineconfirmRentalLambdaHandlerServiceRole0C0877C4",
+                            "Arn"
+                          ]
+                        },
+                        "environment": {
+                          "variables": {
+                            "TABLE_NAME": {
+                              "Ref": "StateMachineRentals390CA5B9"
+                            },
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                          }
+                        },
+                        "handler": "index.handler",
+                        "runtime": "nodejs16.x"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.37.1"
+                }
+              },
+              "cancelRentalLambdaHandler": {
+                "id": "cancelRentalLambdaHandler",
+                "path": "CdkServerlessSagaStack/StateMachine/cancelRentalLambdaHandler",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "CdkServerlessSagaStack/StateMachine/cancelRentalLambdaHandler/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkServerlessSagaStack/StateMachine/cancelRentalLambdaHandler/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "CdkServerlessSagaStack/StateMachine/cancelRentalLambdaHandler/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "CdkServerlessSagaStack/StateMachine/cancelRentalLambdaHandler/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "dynamodb:BatchGetItem",
+                                        "dynamodb:BatchWriteItem",
+                                        "dynamodb:ConditionCheckItem",
+                                        "dynamodb:DeleteItem",
+                                        "dynamodb:DescribeTable",
+                                        "dynamodb:GetItem",
+                                        "dynamodb:GetRecords",
+                                        "dynamodb:GetShardIterator",
+                                        "dynamodb:PutItem",
+                                        "dynamodb:Query",
+                                        "dynamodb:Scan",
+                                        "dynamodb:UpdateItem"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachineRentals390CA5B9",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Ref": "AWS::NoValue"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "StateMachinecancelRentalLambdaHandlerServiceRoleDefaultPolicy9EA60832",
+                                "roles": [
+                                  {
+                                    "Ref": "StateMachinecancelRentalLambdaHandlerServiceRoleC194DAA7"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.37.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "CdkServerlessSagaStack/StateMachine/cancelRentalLambdaHandler/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "CdkServerlessSagaStack/StateMachine/cancelRentalLambdaHandler/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "CdkServerlessSagaStack/StateMachine/cancelRentalLambdaHandler/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/cancelRentalLambdaHandler/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "s3Key": "0c626d6e504338dd6f625a42d581e222f3e9d5a1a5d9cc9d40b4e48fc05ffe86.zip"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "StateMachinecancelRentalLambdaHandlerServiceRoleC194DAA7",
+                            "Arn"
+                          ]
+                        },
+                        "environment": {
+                          "variables": {
+                            "TABLE_NAME": {
+                              "Ref": "StateMachineRentals390CA5B9"
+                            },
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                          }
+                        },
+                        "handler": "index.handler",
+                        "runtime": "nodejs16.x"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.37.1"
+                }
+              },
+              "processPaymentLambdaHandler": {
+                "id": "processPaymentLambdaHandler",
+                "path": "CdkServerlessSagaStack/StateMachine/processPaymentLambdaHandler",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "CdkServerlessSagaStack/StateMachine/processPaymentLambdaHandler/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkServerlessSagaStack/StateMachine/processPaymentLambdaHandler/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "CdkServerlessSagaStack/StateMachine/processPaymentLambdaHandler/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "CdkServerlessSagaStack/StateMachine/processPaymentLambdaHandler/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "dynamodb:BatchGetItem",
+                                        "dynamodb:BatchWriteItem",
+                                        "dynamodb:ConditionCheckItem",
+                                        "dynamodb:DeleteItem",
+                                        "dynamodb:DescribeTable",
+                                        "dynamodb:GetItem",
+                                        "dynamodb:GetRecords",
+                                        "dynamodb:GetShardIterator",
+                                        "dynamodb:PutItem",
+                                        "dynamodb:Query",
+                                        "dynamodb:Scan",
+                                        "dynamodb:UpdateItem"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachinePayments68987CA9",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Ref": "AWS::NoValue"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "StateMachineprocessPaymentLambdaHandlerServiceRoleDefaultPolicyE0F9DF77",
+                                "roles": [
+                                  {
+                                    "Ref": "StateMachineprocessPaymentLambdaHandlerServiceRole6ED8FDF8"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.37.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "CdkServerlessSagaStack/StateMachine/processPaymentLambdaHandler/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "CdkServerlessSagaStack/StateMachine/processPaymentLambdaHandler/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "CdkServerlessSagaStack/StateMachine/processPaymentLambdaHandler/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/processPaymentLambdaHandler/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "s3Key": "43fa9da70ffc2e2123d5f66dcf2bd3d9ae434361729bae523f3ca02ef6b8769c.zip"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "StateMachineprocessPaymentLambdaHandlerServiceRole6ED8FDF8",
+                            "Arn"
+                          ]
+                        },
+                        "environment": {
+                          "variables": {
+                            "TABLE_NAME": {
+                              "Ref": "StateMachinePayments68987CA9"
+                            },
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                          }
+                        },
+                        "handler": "index.handler",
+                        "runtime": "nodejs16.x"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.37.1"
+                }
+              },
+              "refundPaymentLambdaHandler": {
+                "id": "refundPaymentLambdaHandler",
+                "path": "CdkServerlessSagaStack/StateMachine/refundPaymentLambdaHandler",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "CdkServerlessSagaStack/StateMachine/refundPaymentLambdaHandler/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkServerlessSagaStack/StateMachine/refundPaymentLambdaHandler/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "CdkServerlessSagaStack/StateMachine/refundPaymentLambdaHandler/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "CdkServerlessSagaStack/StateMachine/refundPaymentLambdaHandler/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "dynamodb:BatchGetItem",
+                                        "dynamodb:BatchWriteItem",
+                                        "dynamodb:ConditionCheckItem",
+                                        "dynamodb:DeleteItem",
+                                        "dynamodb:DescribeTable",
+                                        "dynamodb:GetItem",
+                                        "dynamodb:GetRecords",
+                                        "dynamodb:GetShardIterator",
+                                        "dynamodb:PutItem",
+                                        "dynamodb:Query",
+                                        "dynamodb:Scan",
+                                        "dynamodb:UpdateItem"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachinePayments68987CA9",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Ref": "AWS::NoValue"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "StateMachinerefundPaymentLambdaHandlerServiceRoleDefaultPolicyAFCCD9FB",
+                                "roles": [
+                                  {
+                                    "Ref": "StateMachinerefundPaymentLambdaHandlerServiceRole7C19940C"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.37.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "CdkServerlessSagaStack/StateMachine/refundPaymentLambdaHandler/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "CdkServerlessSagaStack/StateMachine/refundPaymentLambdaHandler/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "CdkServerlessSagaStack/StateMachine/refundPaymentLambdaHandler/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/refundPaymentLambdaHandler/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "s3Key": "2ae98370d6c5b879f7a2b421e2bb174d4d9648c1b8d6cba658d54ce0331462fe.zip"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "StateMachinerefundPaymentLambdaHandlerServiceRole7C19940C",
+                            "Arn"
+                          ]
+                        },
+                        "environment": {
+                          "variables": {
+                            "TABLE_NAME": {
+                              "Ref": "StateMachinePayments68987CA9"
+                            },
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                          }
+                        },
+                        "handler": "index.handler",
+                        "runtime": "nodejs16.x"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.37.1"
+                }
+              },
+              "Reservation Failed": {
+                "id": "Reservation Failed",
+                "path": "CdkServerlessSagaStack/StateMachine/Reservation Failed",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions.Fail",
+                  "version": "2.37.1"
+                }
+              },
+              "Reservation Successful!": {
+                "id": "Reservation Successful!",
+                "path": "CdkServerlessSagaStack/StateMachine/Reservation Successful!",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions.Succeed",
+                  "version": "2.37.1"
+                }
+              },
+              "Topic": {
+                "id": "Topic",
+                "path": "CdkServerlessSagaStack/StateMachine/Topic",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/Topic/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SNS::Topic",
+                      "aws:cdk:cloudformation:props": {}
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_sns.CfnTopic",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "+11111111111": {
+                    "id": "+11111111111",
+                    "path": "CdkServerlessSagaStack/StateMachine/Topic/+11111111111",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkServerlessSagaStack/StateMachine/Topic/+11111111111/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::SNS::Subscription",
+                          "aws:cdk:cloudformation:props": {
+                            "protocol": "sms",
+                            "topicArn": {
+                              "Ref": "StateMachineTopicA9BE922B"
+                            },
+                            "endpoint": "+11111111111"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_sns.CfnSubscription",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_sns.Subscription",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_sns.Topic",
+                  "version": "2.37.1"
+                }
+              },
+              "SendingSMSFailure": {
+                "id": "SendingSMSFailure",
+                "path": "CdkServerlessSagaStack/StateMachine/SendingSMSFailure",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions_tasks.SnsPublish",
+                  "version": "2.37.1"
+                }
+              },
+              "SendingSMSSuccess": {
+                "id": "SendingSMSSuccess",
+                "path": "CdkServerlessSagaStack/StateMachine/SendingSMSSuccess",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions_tasks.SnsPublish",
+                  "version": "2.37.1"
+                }
+              },
+              "CancelFlightReservation": {
+                "id": "CancelFlightReservation",
+                "path": "CdkServerlessSagaStack/StateMachine/CancelFlightReservation",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions_tasks.LambdaInvoke",
+                  "version": "2.37.1"
+                }
+              },
+              "ReserveFlight": {
+                "id": "ReserveFlight",
+                "path": "CdkServerlessSagaStack/StateMachine/ReserveFlight",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions_tasks.LambdaInvoke",
+                  "version": "2.37.1"
+                }
+              },
+              "CancelRentalReservation": {
+                "id": "CancelRentalReservation",
+                "path": "CdkServerlessSagaStack/StateMachine/CancelRentalReservation",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions_tasks.LambdaInvoke",
+                  "version": "2.37.1"
+                }
+              },
+              "ReserveCarRental": {
+                "id": "ReserveCarRental",
+                "path": "CdkServerlessSagaStack/StateMachine/ReserveCarRental",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions_tasks.LambdaInvoke",
+                  "version": "2.37.1"
+                }
+              },
+              "RefundPayment": {
+                "id": "RefundPayment",
+                "path": "CdkServerlessSagaStack/StateMachine/RefundPayment",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions_tasks.LambdaInvoke",
+                  "version": "2.37.1"
+                }
+              },
+              "ProcessPayment": {
+                "id": "ProcessPayment",
+                "path": "CdkServerlessSagaStack/StateMachine/ProcessPayment",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions_tasks.LambdaInvoke",
+                  "version": "2.37.1"
+                }
+              },
+              "ConfirmFlight": {
+                "id": "ConfirmFlight",
+                "path": "CdkServerlessSagaStack/StateMachine/ConfirmFlight",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions_tasks.LambdaInvoke",
+                  "version": "2.37.1"
+                }
+              },
+              "ConfirmCarRental": {
+                "id": "ConfirmCarRental",
+                "path": "CdkServerlessSagaStack/StateMachine/ConfirmCarRental",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions_tasks.LambdaInvoke",
+                  "version": "2.37.1"
+                }
+              },
+              "StateMachine": {
+                "id": "StateMachine",
+                "path": "CdkServerlessSagaStack/StateMachine/StateMachine",
+                "children": {
+                  "Role": {
+                    "id": "Role",
+                    "path": "CdkServerlessSagaStack/StateMachine/StateMachine/Role",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkServerlessSagaStack/StateMachine/StateMachine/Role/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "states.",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ".amazonaws.com"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "CdkServerlessSagaStack/StateMachine/StateMachine/Role/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "CdkServerlessSagaStack/StateMachine/StateMachine/Role/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "lambda:InvokeFunction",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachinecancelFlightLambdaHandler5E227B7F",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachinecancelRentalLambdaHandler8F61A8AF",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachineconfirmFlightLambdaHandler0FA13D42",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachineconfirmRentalLambdaHandler3C97D251",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachineprocessPaymentLambdaHandler49A8AD5A",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachinerefundPaymentLambdaHandler91749C7C",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachinereserveFlightLambdaHandler77D8E840",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachinereserveRentalLambdaHandler1F8F9C67",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "StateMachinecancelFlightLambdaHandler5E227B7F",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              ":*"
+                                            ]
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "StateMachinecancelRentalLambdaHandler8F61A8AF",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              ":*"
+                                            ]
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "StateMachineconfirmFlightLambdaHandler0FA13D42",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              ":*"
+                                            ]
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "StateMachineconfirmRentalLambdaHandler3C97D251",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              ":*"
+                                            ]
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "StateMachineprocessPaymentLambdaHandler49A8AD5A",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              ":*"
+                                            ]
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "StateMachinerefundPaymentLambdaHandler91749C7C",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              ":*"
+                                            ]
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "StateMachinereserveFlightLambdaHandler77D8E840",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              ":*"
+                                            ]
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "StateMachinereserveRentalLambdaHandler1F8F9C67",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              ":*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "Action": "sns:Publish",
+                                      "Effect": "Allow",
+                                      "Resource": {
+                                        "Ref": "StateMachineTopicA9BE922B"
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "StateMachineRoleDefaultPolicy7BEEC585",
+                                "roles": [
+                                  {
+                                    "Ref": "StateMachineRole969D101E"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.37.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/StateMachine/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::StepFunctions::StateMachine",
+                      "aws:cdk:cloudformation:props": {
+                        "roleArn": {
+                          "Fn::GetAtt": [
+                            "StateMachineRole969D101E",
+                            "Arn"
+                          ]
+                        },
+                        "definitionString": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "{\"StartAt\":\"ReserveFlight\",\"States\":{\"ReserveFlight\":{\"Next\":\"ReserveCarRental\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Catch\":[{\"ErrorEquals\":[\"States.ALL\"],\"ResultPath\":\"$.ReserveFlightError\",\"Next\":\"CancelFlightReservation\"}],\"Type\":\"Task\",\"ResultPath\":\"$.ReserveFlightResult\",\"Resource\":\"arn:",
+                              {
+                                "Ref": "AWS::Partition"
+                              },
+                              ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+                              {
+                                "Fn::GetAtt": [
+                                  "StateMachinereserveFlightLambdaHandler77D8E840",
+                                  "Arn"
+                                ]
+                              },
+                              "\",\"Payload.$\":\"$\"}},\"ReserveCarRental\":{\"Next\":\"ProcessPayment\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Catch\":[{\"ErrorEquals\":[\"States.ALL\"],\"ResultPath\":\"$.ReserveCarRentalError\",\"Next\":\"CancelRentalReservation\"}],\"Type\":\"Task\",\"ResultPath\":\"$.ReserveCarRentalResult\",\"Resource\":\"arn:",
+                              {
+                                "Ref": "AWS::Partition"
+                              },
+                              ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+                              {
+                                "Fn::GetAtt": [
+                                  "StateMachinereserveRentalLambdaHandler1F8F9C67",
+                                  "Arn"
+                                ]
+                              },
+                              "\",\"Payload.$\":\"$\"}},\"ProcessPayment\":{\"Next\":\"ConfirmFlight\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Catch\":[{\"ErrorEquals\":[\"States.ALL\"],\"ResultPath\":\"$.ProcessPaymentError\",\"Next\":\"RefundPayment\"}],\"Type\":\"Task\",\"ResultPath\":\"$.ProcessPaymentResult\",\"Resource\":\"arn:",
+                              {
+                                "Ref": "AWS::Partition"
+                              },
+                              ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+                              {
+                                "Fn::GetAtt": [
+                                  "StateMachineprocessPaymentLambdaHandler49A8AD5A",
+                                  "Arn"
+                                ]
+                              },
+                              "\",\"Payload.$\":\"$\"}},\"ConfirmFlight\":{\"Next\":\"ConfirmCarRental\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Catch\":[{\"ErrorEquals\":[\"States.ALL\"],\"ResultPath\":\"$.ConfirmFlightError\",\"Next\":\"RefundPayment\"}],\"Type\":\"Task\",\"ResultPath\":\"$.ConfirmFlightResult\",\"Resource\":\"arn:",
+                              {
+                                "Ref": "AWS::Partition"
+                              },
+                              ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+                              {
+                                "Fn::GetAtt": [
+                                  "StateMachineconfirmFlightLambdaHandler0FA13D42",
+                                  "Arn"
+                                ]
+                              },
+                              "\",\"Payload.$\":\"$\"}},\"ConfirmCarRental\":{\"Next\":\"SendingSMSSuccess\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Catch\":[{\"ErrorEquals\":[\"States.ALL\"],\"ResultPath\":\"$.ConfirmCarRentalError\",\"Next\":\"RefundPayment\"}],\"Type\":\"Task\",\"ResultPath\":\"$.ConfirmCarRentalResult\",\"Resource\":\"arn:",
+                              {
+                                "Ref": "AWS::Partition"
+                              },
+                              ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+                              {
+                                "Fn::GetAtt": [
+                                  "StateMachineconfirmRentalLambdaHandler3C97D251",
+                                  "Arn"
+                                ]
+                              },
+                              "\",\"Payload.$\":\"$\"}},\"SendingSMSSuccess\":{\"Next\":\"Reservation Successful!\",\"Type\":\"Task\",\"Resource\":\"arn:",
+                              {
+                                "Ref": "AWS::Partition"
+                              },
+                              ":states:::sns:publish\",\"Parameters\":{\"TopicArn\":\"",
+                              {
+                                "Ref": "StateMachineTopicA9BE922B"
+                              },
+                              "\",\"Message\":\"Your Travel Reservation is Successful\"}},\"Reservation Successful!\":{\"Type\":\"Succeed\"},\"RefundPayment\":{\"Next\":\"CancelRentalReservation\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2},{\"ErrorEquals\":[\"States.ALL\"],\"MaxAttempts\":3}],\"Type\":\"Task\",\"ResultPath\":\"$.RefundPaymentResult\",\"Resource\":\"arn:",
+                              {
+                                "Ref": "AWS::Partition"
+                              },
+                              ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+                              {
+                                "Fn::GetAtt": [
+                                  "StateMachinerefundPaymentLambdaHandler91749C7C",
+                                  "Arn"
+                                ]
+                              },
+                              "\",\"Payload.$\":\"$\"}},\"CancelRentalReservation\":{\"Next\":\"CancelFlightReservation\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2},{\"ErrorEquals\":[\"States.ALL\"],\"MaxAttempts\":3}],\"Type\":\"Task\",\"ResultPath\":\"$.CancelRentalReservationResult\",\"Resource\":\"arn:",
+                              {
+                                "Ref": "AWS::Partition"
+                              },
+                              ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+                              {
+                                "Fn::GetAtt": [
+                                  "StateMachinecancelRentalLambdaHandler8F61A8AF",
+                                  "Arn"
+                                ]
+                              },
+                              "\",\"Payload.$\":\"$\"}},\"CancelFlightReservation\":{\"Next\":\"SendingSMSFailure\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2},{\"ErrorEquals\":[\"States.ALL\"],\"MaxAttempts\":3}],\"Type\":\"Task\",\"ResultPath\":\"$.CancelFlightReservationResult\",\"Resource\":\"arn:",
+                              {
+                                "Ref": "AWS::Partition"
+                              },
+                              ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+                              {
+                                "Fn::GetAtt": [
+                                  "StateMachinecancelFlightLambdaHandler5E227B7F",
+                                  "Arn"
+                                ]
+                              },
+                              "\",\"Payload.$\":\"$\"}},\"SendingSMSFailure\":{\"Next\":\"Reservation Failed\",\"Type\":\"Task\",\"Resource\":\"arn:",
+                              {
+                                "Ref": "AWS::Partition"
+                              },
+                              ":states:::sns:publish\",\"Parameters\":{\"TopicArn\":\"",
+                              {
+                                "Ref": "StateMachineTopicA9BE922B"
+                              },
+                              "\",\"Message\":\"Your Travel Reservation Failed\"}},\"Reservation Failed\":{\"Type\":\"Fail\",\"Error\":\"Job Failed\"}}}"
+                            ]
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_stepfunctions.CfnStateMachine",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions.StateMachine",
+                  "version": "2.37.1"
+                }
+              },
+              "sagaLambdaHandler": {
+                "id": "sagaLambdaHandler",
+                "path": "CdkServerlessSagaStack/StateMachine/sagaLambdaHandler",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "CdkServerlessSagaStack/StateMachine/sagaLambdaHandler/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkServerlessSagaStack/StateMachine/sagaLambdaHandler/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "CdkServerlessSagaStack/StateMachine/sagaLambdaHandler/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "CdkServerlessSagaStack/StateMachine/sagaLambdaHandler/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "states:StartExecution",
+                                      "Effect": "Allow",
+                                      "Resource": {
+                                        "Ref": "StateMachine703B4B93"
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "StateMachinesagaLambdaHandlerServiceRoleDefaultPolicy1B8E9AFA",
+                                "roles": [
+                                  {
+                                    "Ref": "StateMachinesagaLambdaHandlerServiceRoleE632BA04"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.37.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "CdkServerlessSagaStack/StateMachine/sagaLambdaHandler/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "CdkServerlessSagaStack/StateMachine/sagaLambdaHandler/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "CdkServerlessSagaStack/StateMachine/sagaLambdaHandler/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/sagaLambdaHandler/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "s3Key": "80fdd36b249f0dc584ba86c729d51ca4bf14f36ff04bdc546bba8dd78a2588fb.zip"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "StateMachinesagaLambdaHandlerServiceRoleE632BA04",
+                            "Arn"
+                          ]
+                        },
+                        "environment": {
+                          "variables": {
+                            "statemachine_arn": {
+                              "Ref": "StateMachine703B4B93"
+                            },
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                          }
+                        },
+                        "handler": "index.handler",
+                        "runtime": "nodejs16.x"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.37.1"
+                }
+              },
+              "ServerlessSagaPattern": {
+                "id": "ServerlessSagaPattern",
+                "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::RestApi",
+                      "aws:cdk:cloudformation:props": {
+                        "name": "ServerlessSagaPattern"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.CfnRestApi",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "CloudWatchRole": {
+                    "id": "CloudWatchRole",
+                    "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/CloudWatchRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/CloudWatchRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "apigateway.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Account": {
+                    "id": "Account",
+                    "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Account",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Account",
+                      "aws:cdk:cloudformation:props": {
+                        "cloudWatchRoleArn": {
+                          "Fn::GetAtt": [
+                            "StateMachineServerlessSagaPatternCloudWatchRole6BD0DAF0",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.CfnAccount",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Deployment": {
+                    "id": "Deployment",
+                    "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Deployment",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Deployment/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGateway::Deployment",
+                          "aws:cdk:cloudformation:props": {
+                            "restApiId": {
+                              "Ref": "StateMachineServerlessSagaPatternD08D7845"
+                            },
+                            "description": "Automatically created by the RestApi construct"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.CfnDeployment",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.Deployment",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "DeploymentStage.prod": {
+                    "id": "DeploymentStage.prod",
+                    "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/DeploymentStage.prod",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/DeploymentStage.prod/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
+                          "aws:cdk:cloudformation:props": {
+                            "restApiId": {
+                              "Ref": "StateMachineServerlessSagaPatternD08D7845"
+                            },
+                            "deploymentId": {
+                              "Ref": "StateMachineServerlessSagaPatternDeployment8DD4CF636ad144aab689fd01d983085a63de2171"
+                            },
+                            "stageName": "prod"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.CfnStage",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.Stage",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Endpoint": {
+                    "id": "Endpoint",
+                    "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Endpoint",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnOutput",
+                      "version": "2.37.1"
+                    }
+                  },
+                  "Default": {
+                    "id": "Default",
+                    "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default",
+                    "children": {
+                      "{proxy+}": {
+                        "id": "{proxy+}",
+                        "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/{proxy+}",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/{proxy+}/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
+                              "aws:cdk:cloudformation:props": {
+                                "parentId": {
+                                  "Fn::GetAtt": [
+                                    "StateMachineServerlessSagaPatternD08D7845",
+                                    "RootResourceId"
+                                  ]
+                                },
+                                "pathPart": "{proxy+}",
+                                "restApiId": {
+                                  "Ref": "StateMachineServerlessSagaPatternD08D7845"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.CfnResource",
+                              "version": "2.37.1"
+                            }
+                          },
+                          "ANY": {
+                            "id": "ANY",
+                            "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/{proxy+}/ANY",
+                            "children": {
+                              "ApiPermission.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..{proxy+}": {
+                                "id": "ApiPermission.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..{proxy+}",
+                                "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/{proxy+}/ANY/ApiPermission.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..{proxy+}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "StateMachinesagaLambdaHandler6808B180",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "StateMachineServerlessSagaPatternD08D7845"
+                                          },
+                                          "/",
+                                          {
+                                            "Ref": "StateMachineServerlessSagaPatternDeploymentStageprodF2570316"
+                                          },
+                                          "/*/*"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                  "version": "2.37.1"
+                                }
+                              },
+                              "ApiPermission.Test.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..{proxy+}": {
+                                "id": "ApiPermission.Test.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..{proxy+}",
+                                "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/{proxy+}/ANY/ApiPermission.Test.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..{proxy+}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "StateMachinesagaLambdaHandler6808B180",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "StateMachineServerlessSagaPatternD08D7845"
+                                          },
+                                          "/test-invoke-stage/*/*"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                  "version": "2.37.1"
+                                }
+                              },
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/{proxy+}/ANY/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                  "aws:cdk:cloudformation:props": {
+                                    "httpMethod": "ANY",
+                                    "resourceId": {
+                                      "Ref": "StateMachineServerlessSagaPatternproxyAE2C7FF6"
+                                    },
+                                    "restApiId": {
+                                      "Ref": "StateMachineServerlessSagaPatternD08D7845"
+                                    },
+                                    "authorizationType": "NONE",
+                                    "integration": {
+                                      "type": "AWS_PROXY",
+                                      "uri": {
+                                        "Fn::Join": [
+                                          "",
+                                          [
+                                            "arn:",
+                                            {
+                                              "Ref": "AWS::Partition"
+                                            },
+                                            ":apigateway:",
+                                            {
+                                              "Ref": "AWS::Region"
+                                            },
+                                            ":lambda:path/2015-03-31/functions/",
+                                            {
+                                              "Fn::GetAtt": [
+                                                "StateMachinesagaLambdaHandler6808B180",
+                                                "Arn"
+                                              ]
+                                            },
+                                            "/invocations"
+                                          ]
+                                        ]
+                                      },
+                                      "integrationHttpMethod": "POST"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                                  "version": "2.37.1"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                              "version": "2.37.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.ProxyResource",
+                          "version": "2.37.1"
+                        }
+                      },
+                      "ANY": {
+                        "id": "ANY",
+                        "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/ANY",
+                        "children": {
+                          "ApiPermission.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..": {
+                            "id": "ApiPermission.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..",
+                            "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/ANY/ApiPermission.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "StateMachinesagaLambdaHandler6808B180",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "StateMachineServerlessSagaPatternD08D7845"
+                                      },
+                                      "/",
+                                      {
+                                        "Ref": "StateMachineServerlessSagaPatternDeploymentStageprodF2570316"
+                                      },
+                                      "/*/"
+                                    ]
+                                  ]
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                              "version": "2.37.1"
+                            }
+                          },
+                          "ApiPermission.Test.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..": {
+                            "id": "ApiPermission.Test.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..",
+                            "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/ANY/ApiPermission.Test.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "StateMachinesagaLambdaHandler6808B180",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "StateMachineServerlessSagaPatternD08D7845"
+                                      },
+                                      "/test-invoke-stage/*/"
+                                    ]
+                                  ]
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                              "version": "2.37.1"
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/ANY/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                              "aws:cdk:cloudformation:props": {
+                                "httpMethod": "ANY",
+                                "resourceId": {
+                                  "Fn::GetAtt": [
+                                    "StateMachineServerlessSagaPatternD08D7845",
+                                    "RootResourceId"
+                                  ]
+                                },
+                                "restApiId": {
+                                  "Ref": "StateMachineServerlessSagaPatternD08D7845"
+                                },
+                                "authorizationType": "NONE",
+                                "integration": {
+                                  "type": "AWS_PROXY",
+                                  "uri": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":apigateway:",
+                                        {
+                                          "Ref": "AWS::Region"
+                                        },
+                                        ":lambda:path/2015-03-31/functions/",
+                                        {
+                                          "Fn::GetAtt": [
+                                            "StateMachinesagaLambdaHandler6808B180",
+                                            "Arn"
+                                          ]
+                                        },
+                                        "/invocations"
+                                      ]
+                                    ]
+                                  },
+                                  "integrationHttpMethod": "POST"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                              "version": "2.37.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                          "version": "2.37.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.ResourceBase",
+                      "version": "2.37.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_apigateway.LambdaRestApi",
+                  "version": "2.37.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.74"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "CdkServerlessSagaStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "CdkServerlessSagaStack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.37.1"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "CdkServerlessSagaStack/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.37.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.74"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.37.1"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.37.1"
+    }
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "version": "20.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "CdkServerlessSagaStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CdkServerlessSagaStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CdkServerlessSagaStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "CdkServerlessSagaStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/69d1cf3e1c945dc7fd7bd1e26af3b954a62eacdf59ba9b8777588b9d5545829a.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CdkServerlessSagaStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "CdkServerlessSagaStack.assets"
+      ],
+      "metadata": {
+        "/CdkServerlessSagaStack/StateMachine/Flights/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineFlights3C492D1B"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/Rentals/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineRentals390CA5B9"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/Payments/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinePayments68987CA9"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/reserveFlightLambdaHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinereserveFlightLambdaHandlerServiceRole2690F28A"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/reserveFlightLambdaHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinereserveFlightLambdaHandlerServiceRoleDefaultPolicy89EFFCA0"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/reserveFlightLambdaHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinereserveFlightLambdaHandler77D8E840"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/confirmFlightLambdaHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineconfirmFlightLambdaHandlerServiceRoleB208790D"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/confirmFlightLambdaHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineconfirmFlightLambdaHandlerServiceRoleDefaultPolicy5FFA13F3"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/confirmFlightLambdaHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineconfirmFlightLambdaHandler0FA13D42"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/cancelFlightLambdaHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinecancelFlightLambdaHandlerServiceRoleF9A4FEBF"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/cancelFlightLambdaHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinecancelFlightLambdaHandlerServiceRoleDefaultPolicyF8BBA7E8"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/cancelFlightLambdaHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinecancelFlightLambdaHandler5E227B7F"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/reserveRentalLambdaHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinereserveRentalLambdaHandlerServiceRole7BF152F7"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/reserveRentalLambdaHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinereserveRentalLambdaHandlerServiceRoleDefaultPolicyCC05D643"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/reserveRentalLambdaHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinereserveRentalLambdaHandler1F8F9C67"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/confirmRentalLambdaHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineconfirmRentalLambdaHandlerServiceRole0C0877C4"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/confirmRentalLambdaHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineconfirmRentalLambdaHandlerServiceRoleDefaultPolicyB855A1A9"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/confirmRentalLambdaHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineconfirmRentalLambdaHandler3C97D251"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/cancelRentalLambdaHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinecancelRentalLambdaHandlerServiceRoleC194DAA7"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/cancelRentalLambdaHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinecancelRentalLambdaHandlerServiceRoleDefaultPolicy9EA60832"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/cancelRentalLambdaHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinecancelRentalLambdaHandler8F61A8AF"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/processPaymentLambdaHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineprocessPaymentLambdaHandlerServiceRole6ED8FDF8"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/processPaymentLambdaHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineprocessPaymentLambdaHandlerServiceRoleDefaultPolicyE0F9DF77"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/processPaymentLambdaHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineprocessPaymentLambdaHandler49A8AD5A"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/refundPaymentLambdaHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinerefundPaymentLambdaHandlerServiceRole7C19940C"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/refundPaymentLambdaHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinerefundPaymentLambdaHandlerServiceRoleDefaultPolicyAFCCD9FB"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/refundPaymentLambdaHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinerefundPaymentLambdaHandler91749C7C"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/Topic/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineTopicA9BE922B"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/Topic/+11111111111/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineTopic11111111111815E9333"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/StateMachine/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineRole969D101E"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/StateMachine/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineRoleDefaultPolicy7BEEC585"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/StateMachine/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachine703B4B93"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/sagaLambdaHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinesagaLambdaHandlerServiceRoleE632BA04"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/sagaLambdaHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinesagaLambdaHandlerServiceRoleDefaultPolicy1B8E9AFA"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/sagaLambdaHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinesagaLambdaHandler6808B180"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineServerlessSagaPatternD08D7845"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineServerlessSagaPatternCloudWatchRole6BD0DAF0"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineServerlessSagaPatternAccountECA6C496"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineServerlessSagaPatternDeployment8DD4CF636ad144aab689fd01d983085a63de2171"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineServerlessSagaPatternDeploymentStageprodF2570316"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineServerlessSagaPatternEndpoint3D620525"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/{proxy+}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineServerlessSagaPatternproxyAE2C7FF6"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/{proxy+}/ANY/ApiPermission.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineServerlessSagaPatternproxyANYApiPermissionCdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DBANYproxyCF734A50"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/{proxy+}/ANY/ApiPermission.Test.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineServerlessSagaPatternproxyANYApiPermissionTestCdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DBANYproxy981294F0"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/{proxy+}/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineServerlessSagaPatternproxyANY6DD23738"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/ANY/ApiPermission.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineServerlessSagaPatternANYApiPermissionCdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DBANYBC3275CC"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/ANY/ApiPermission.Test.CdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DB.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineServerlessSagaPatternANYApiPermissionTestCdkServerlessSagaStackStateMachineServerlessSagaPatternB5C5C4DBANY14969C2E"
+          }
+        ],
+        "/CdkServerlessSagaStack/StateMachine/ServerlessSagaPattern/Default/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineServerlessSagaPatternANY2217671B"
+          }
+        ],
+        "/CdkServerlessSagaStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CdkServerlessSagaStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/CdkServerlessSagaStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CdkServerlessSagaStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "CdkServerlessSagaStack"
+    }
+  }
+}

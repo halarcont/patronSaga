@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CdkServerlessSagaStack = void 0;
+const cdk = require("aws-cdk-lib");
+const stateMachine_1 = require("./stateMachine");
+class CdkServerlessSagaStack extends cdk.Stack {
+    constructor(scope, id, props) {
+        super(scope, id, props);
+        const stateMachine = new stateMachine_1.StateMachine(this, 'StateMachine');
+    }
+}
+exports.CdkServerlessSagaStack = CdkServerlessSagaStack;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY2RrLXNlcnZlcmxlc3Mtc2FnYS1zdGFjay5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL2xpYi9jZGstc2VydmVybGVzcy1zYWdhLXN0YWNrLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLG1DQUFtQztBQUVuQyxpREFBOEM7QUFFOUMsTUFBYSxzQkFBdUIsU0FBUSxHQUFHLENBQUMsS0FBSztJQUNuRCxZQUFZLEtBQWdCLEVBQUUsRUFBVSxFQUFFLEtBQXNCO1FBQzlELEtBQUssQ0FBQyxLQUFLLEVBQUUsRUFBRSxFQUFFLEtBQUssQ0FBQyxDQUFDO1FBRXhCLE1BQU0sWUFBWSxHQUFHLElBQUksMkJBQVksQ0FBQyxJQUFJLEVBQUUsY0FBYyxDQUFDLENBQUM7SUFDOUQsQ0FBQztDQUNGO0FBTkQsd0RBTUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgKiBhcyBjZGsgZnJvbSAnYXdzLWNkay1saWInO1xuaW1wb3J0IHsgQ29uc3RydWN0IH0gZnJvbSAnY29uc3RydWN0cyc7XG5pbXBvcnQgeyBTdGF0ZU1hY2hpbmUgfSBmcm9tICcuL3N0YXRlTWFjaGluZSc7XG5cbmV4cG9ydCBjbGFzcyBDZGtTZXJ2ZXJsZXNzU2FnYVN0YWNrIGV4dGVuZHMgY2RrLlN0YWNrIHtcbiAgY29uc3RydWN0b3Ioc2NvcGU6IENvbnN0cnVjdCwgaWQ6IHN0cmluZywgcHJvcHM/OiBjZGsuU3RhY2tQcm9wcykge1xuICAgIHN1cGVyKHNjb3BlLCBpZCwgcHJvcHMpO1xuXG4gICAgY29uc3Qgc3RhdGVNYWNoaW5lID0gbmV3IFN0YXRlTWFjaGluZSh0aGlzLCAnU3RhdGVNYWNoaW5lJyk7XG4gIH1cbn1cbiJdfQ==
