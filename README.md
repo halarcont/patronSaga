@@ -1,6 +1,6 @@
 # Pasos para compilar el proyecto
 
-1- Instale los paquetes NPM.  
+1- En la carpeta raiz del proyecto instale los paquetes NPM.  
     >npm install  
     
 2- En la carpeta raíz, ejecute el siguiente comando para indicar al TypeScript transpilador que cree todos los JavaScript archivos necesarios:  
